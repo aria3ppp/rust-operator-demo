@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "env": {
+                "KUBECONFIG": "/home/alpha/.kube/config"
+            },
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'rust-operator'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=rust-operator",
+                    "--package=rust-operator"
+                ],
+                "filter": {
+                    "name": "rust-operator",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "env": {
+                "KUBECONFIG": "/home/alpha/.kube/config"
+            },
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'rust-operator'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=rust-operator",
+                    "--package=rust-operator"
+                ],
+                "filter": {
+                    "name": "rust-operator",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
